@@ -64,6 +64,15 @@ export default function App() {
     );
   };
 
+  const renderNoMoreCards = () => {
+    return (
+      <View style={[styles.card, { marginTop: 30 }]}>
+        <Text>All done</Text>
+        <Button title={"Get More"} />
+      </View>
+    );
+  };
+
   return (
     <View style={styles.container}>
       <Deck
@@ -71,6 +80,7 @@ export default function App() {
         renderCard={renderCard}
         onSwipeRight={(item) => console.log("item onSwipeRight")}
         onSwipeLeft={(item) => console.log("item onSwipeLeft")}
+        renderNoMoreCards={renderNoMoreCards}
       />
     </View>
   );
